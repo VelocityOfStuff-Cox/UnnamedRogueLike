@@ -1,0 +1,13 @@
+﻿  GameBoard.cpp
+D:\Documents\GitHub\RogueLike\RogueLike\GameBoard.cpp(95,41): error C2440: '=': cannot convert from 'GameBoard::doubleChar' to 'wchar_t'
+  D:\Documents\GitHub\RogueLike\RogueLike\GameBoard.cpp(95,41):
+  There is no context in which this conversion is possible
+  
+D:\Documents\GitHub\RogueLike\RogueLike\GameBoard.cpp(96,41): error C2440: '=': cannot convert from 'GameBoard::doubleChar' to 'wchar_t'
+  D:\Documents\GitHub\RogueLike\RogueLike\GameBoard.cpp(96,41):
+  There is no context in which this conversion is possible
+  
+D:\Documents\GitHub\RogueLike\RogueLike\GameBoard.cpp(100,28): error C3863: array type 'wchar_t [2]' is not assignable
+D:\Documents\GitHub\RogueLike\RogueLike\GameBoard.cpp(105,38): error C3863: array type 'wchar_t [2]' is not assignable
+  Source.cpp
+  Generating Code...
