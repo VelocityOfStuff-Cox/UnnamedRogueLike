@@ -11,4 +11,6 @@ struct Vector2D
 {
 	int x{ 0 };
 	int y{ 0 };
+
+	void operator+=(Vector2D other);
 };

@@ -1,6 +1,7 @@
 #include <iostream>
 #include "Engine.h"
 #include "GameBoard.h"
+#include "Player.h"
 
 bool gameOver{ false };
 
@@ -9,10 +10,7 @@ int main()
 	GameBoard gameBoard;
 	gameBoard.defaultBoard();
 	//Player with default values
-
-	wchar_t testChar[2]{ L'-','_'};
-
-	std::wcout << testChar << std::endl;
+	Player player("/@", {});
 
 	while (!gameOver)
 	{

@@ -1,6 +1,7 @@
 #include "GameBoard.h"
 #include <iostream>
 #include <fstream>
+#include "Player.h"
 
 void GameBoard::print()
 {
@@ -72,7 +73,7 @@ bool GameBoard::loadBoard()
 }
 */
 
-void GameBoard::defaultBoard()
+void GameBoard::defaultBoard(Player& player)
 {
 	size = { 11,11 };
 	board.resize(size.x);
@@ -87,26 +88,20 @@ void GameBoard::defaultBoard()
 		{
 			if (isTallEdge({ row,tile }) && row > 0)
 			{
-				//double character values assigned to map in parts
-				//I am unsure why only this portion takes values when the rest take pointers
-				board.at(row).at(tile)[0] = weWall[0];
-				board.at(row).at(tile)[1] = weWall[1];
+				board.at(row).at(tile) = weWall;
 			}
 			else if (isWideEdge({ row,tile }) && !isTallEdge({ row,tile }))
 			{
-				board.at(row).at(tile)[0] = *nsWall[0];
-				board.at(row).at(tile)[1] = *nsWall[1];
+				board.at(row).at(tile) = nsWall;
 			}
 			else if (!isTallEdge({ row,tile }))
 			{
-				board.at(row).at(tile)[0] = *floor[0];
-				board.at(row).at(tile)[1] = *floor[1];
+				board.at(row).at(tile) = floor;
 			}
 		}
 	}
 	
-	board.at(size.x / 2).at(size.y / 2)[0] = *player[0];
-	board.at(size.x / 2).at(size.y / 2)[1] = *player[1];
+	board.at(player.getPosition().x).at(player.getPosition().y)= playerSprite;
 }
 
 bool GameBoard::isTallEdge(Vector2D tile)

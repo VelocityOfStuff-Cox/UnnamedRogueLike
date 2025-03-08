@@ -3,26 +3,26 @@
 #include <string>
 #include <map>
 #include "Engine.h"
+#include <string>
+#include "Player.h"
 
 class GameBoard
 {
 public:
 	void print();
 	bool loadBoard();
-	void defaultBoard();
+	void defaultBoard(Player& player);
 
 private:
 
-	typedef wchar_t doubleChar[2];
-
-	doubleChar weWall{ '|' };
-	doubleChar nsWall[2]{ '_','_' };
-	doubleChar floor[2]{ '-','-' };
-	doubleChar player[2]{ '/','@' };
-	doubleChar rat[2]{ '/','r' };
+	std::string weWall{ '|' };
+	std::string nsWall{ "__" };
+	std::string floor{ "--" };
+	std::string playerSprite{ "/@" };
+	std::string rat{ "/r" };
 
 	Vector2D size{ 0,0 };
-	std::vector<std::vector<doubleChar>> board;
+	std::vector<std::vector<std::string>> board;
 
 	bool isTallEdge(Vector2D tile);
 	bool isWideEdge(Vector2D tile);
